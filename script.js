@@ -21,4 +21,5 @@ function calculateAge() {
 
     // displaying the calculated age
     result.innerHTML = `You are ${years} years, ${months} months, and ${days} days old.`;
+    
 }
