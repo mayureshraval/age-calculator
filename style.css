@@ -118,6 +118,7 @@
     .age-gif {
         display: block;
         width: 100%;
-        height: ;
+        height: 40vh;
+        margin-top: -40px;
     }
 }
