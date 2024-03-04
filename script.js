@@ -9,17 +9,23 @@ userInput.max = moment().format('YYYY-MM-DD');
 let result = document.getElementById('result');
 
 function calculateAge() {
-    // taking birthdate from user and converting it into a moment object
-    let birthDate = moment(userInput.value);
-    // calculating the difference between the birthdate and today's date and converting it into a duration object.
-    let ageDuration = moment.duration(moment().diff(birthDate));
-    // console.log(ageDuration);
-    // extracting the years, months, and days from the ageDuration object.
-    let years = ageDuration.years();
-    let months = ageDuration.months();
-    let days = ageDuration.days();
+    if (userInput.value === '') {
+        result.innerHTML = 'Enter a Date first';
+    }
+    else {
+        // taking birthdate from user and converting it into a moment object
+        let birthDate = moment(userInput.value);
+        // calculating the difference between the birthdate and today's date and converting it into a duration object.
+        let ageDuration = moment.duration(moment().diff(birthDate));
+        // console.log(ageDuration);
+        // extracting the years, months, and days from the ageDuration object.
+        let years = ageDuration.years();
+        let months = ageDuration.months();
+        let days = ageDuration.days();
 
-    // displaying the calculated age
-    result.innerHTML = `You are ${years} years, ${months} months, and ${days} days old.`;
-    
+        // displaying the calculated age
+        result.innerHTML = `You are ${years} years, ${months} months, and ${days} days old.`;
+    }
+
+
 }
